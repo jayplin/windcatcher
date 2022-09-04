@@ -1,7 +1,10 @@
 // dart async library we will refer to when setting up real time updates
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
 // flutter and ui libraries
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+
 // amplify packages we will need to use
 import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:amplify_api/amplify_api.dart';
@@ -88,26 +91,26 @@ class _TodosPageState extends State<TodosPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('My Todo List'),
+    return PlatformScaffold(
+      appBar: PlatformAppBar(
+        title: const Text('My Todo List'),
+        trailingActions: <Widget>[
+          PlatformIconButton(
+            onPressed: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddTodoForm()),
+              )
+            },
+            materialIcon: const Icon(Icons.add),
+            cupertinoIcon: const Icon(CupertinoIcons.add),
+          ),
+        ],
       ),
+      iosContentPadding: true,
       body: _isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? Center(child: PlatformCircularProgressIndicator())
           : TodosList(todos: _todos),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => AddTodoForm()),
-          );
-        },
-        tooltip: 'Add Todo',
-        label: Row(
-          children: [Icon(Icons.add), Text('Add todo')],
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

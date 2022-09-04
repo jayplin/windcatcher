@@ -1,7 +1,9 @@
 // flutter and ui libraries
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // amplify packages we will need to use
 import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 // amplify model provider (should have been generated for you)
 import '../models/ModelProvider.dart';
 
@@ -51,17 +53,34 @@ class TodoItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(todo.name,
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
                   Text(todo.description ?? 'No description'),
                 ],
               ),
             ),
-            Icon(
-                todo.isComplete
-                    ? Icons.check_box
-                    : Icons.check_box_outline_blank,
-                size: iconSize),
+            Container(
+                child: todo.isComplete
+                    ? PlatformIconButton(
+                        materialIcon: const Icon(
+                          Icons.check_box,
+                          color: Colors.black,
+                        ),
+                        cupertinoIcon: const Icon(
+                          CupertinoIcons.check_mark_circled_solid,
+                          color: Colors.black,
+                        ),
+                      )
+                    : PlatformIconButton(
+                        materialIcon: const Icon(
+                          Icons.check_box_outline_blank,
+                          color: Colors.black,
+                        ),
+                        cupertinoIcon: const Icon(
+                          CupertinoIcons.circle,
+                          color: Colors.black,
+                        ),
+                      )),
           ]),
         ),
       ),

@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 // amplify packages we will need to use
 import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 // amplify model provider (should have been generated for you)
 import '../models/ModelProvider.dart';
 
@@ -42,12 +43,12 @@ class _AddTodoFormState extends State<AddTodoForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Add Todo'),
+    return PlatformScaffold(
+      appBar: PlatformAppBar(
+        title: const Text('Add Todo'),
       ),
       body: Container(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -64,6 +65,7 @@ class _AddTodoFormState extends State<AddTodoForm> {
           ),
         ),
       ),
+      iosContentPadding: true,
     );
   }
 }
