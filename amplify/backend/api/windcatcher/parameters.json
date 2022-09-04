@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "windcatcher",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2022-09-04T00:51:04.162Z"
+}

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-windcatcher-dev-21627-authRole",
+      "UnauthRoleArn": "arn:aws:iam::347291401855:role/amplify-windcatcher-dev-21627-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::347291401855:role/amplify-windcatcher-dev-21627-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-windcatcher-dev-21627-deployment",
+      "UnauthRoleName": "amplify-windcatcher-dev-21627-unauthRole",
+      "StackName": "amplify-windcatcher-dev-21627",
+      "StackId": "arn:aws:cloudformation:eu-west-2:347291401855:stack/amplify-windcatcher-dev-21627/d25d0f60-2be6-11ed-bf6a-02a877fd9a44",
+      "AmplifyAppId": "d3gxseqqju95d6"
+    },
+    "categories": {
+      "auth": {
+        "windcatcher94b1dafc": {}
+      }
+    }
+  }
+}
