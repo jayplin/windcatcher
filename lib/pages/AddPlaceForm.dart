@@ -4,16 +4,17 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 // amplify packages we will need to use
 import 'package:amplify_flutter/amplify_flutter.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 // amplify model provider (should have been generated for you)
 import '../models/ModelProvider.dart';
 
-class AddTodoForm extends StatefulWidget {
+class AddPlaceForm extends StatefulWidget {
+  const AddPlaceForm({super.key});
+
   @override
-  _AddTodoFormState createState() => _AddTodoFormState();
+  _AddPlaceFormState createState() => _AddPlaceFormState();
 }
 
-class _AddTodoFormState extends State<AddTodoForm> {
+class _AddPlaceFormState extends State<AddPlaceForm> {
   final _nameController = TextEditingController();
   final _descriptionController = TextEditingController();
 
@@ -43,9 +44,9 @@ class _AddTodoFormState extends State<AddTodoForm> {
 
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(
-      appBar: PlatformAppBar(
-        title: const Text('Add Todo'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Add Place'),
       ),
       body: Container(
         padding: const EdgeInsets.all(8.0),
@@ -55,17 +56,18 @@ class _AddTodoFormState extends State<AddTodoForm> {
             children: [
               TextFormField(
                   controller: _nameController,
-                  decoration: InputDecoration(filled: true, labelText: 'Name')),
+                  decoration:
+                      const InputDecoration(filled: true, labelText: 'Name')),
               TextFormField(
                   controller: _descriptionController,
-                  decoration:
-                      InputDecoration(filled: true, labelText: 'Description')),
-              ElevatedButton(onPressed: _saveTodo, child: Text('Save'))
+                  decoration: const InputDecoration(
+                      filled: true, labelText: 'Description')),
+              const Padding(padding: EdgeInsets.all(8.0)),
+              ElevatedButton(onPressed: _saveTodo, child: const Text('Save'))
             ],
           ),
         ),
       ),
-      iosContentPadding: true,
     );
   }
 }
