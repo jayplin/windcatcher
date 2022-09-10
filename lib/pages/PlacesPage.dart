@@ -14,7 +14,7 @@ import 'package:latlong2/latlong.dart';
 // amplify model provider (should have been generated for you)
 import '../amplifyconfiguration.dart';
 import '../models/ModelProvider.dart';
-import '../widgets/TodosList.dart';
+import '../widgets/PlacesList.dart';
 import 'AddPlaceForm.dart';
 
 class PlacesPage extends StatefulWidget {
@@ -118,7 +118,7 @@ class _PlacesPageState extends State<PlacesPage> {
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
-          : TodosList(todos: _todos),
+          : PlacesList(todos: _todos),
     );
   }
 }

@@ -7,11 +7,11 @@ import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 // amplify model provider (should have been generated for you)
 import '../models/ModelProvider.dart';
 
-class TodoItem extends StatelessWidget {
+class PlaceItem extends StatelessWidget {
   final double iconSize = 24.0;
   final Todo todo;
 
-  TodoItem({required this.todo});
+  PlaceItem({required this.todo});
 
   void _deleteTodo(BuildContext context) async {
     try {
