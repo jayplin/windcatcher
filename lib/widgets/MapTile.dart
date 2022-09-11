@@ -9,19 +9,12 @@ class MapTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlutterMap(
       options: MapOptions(
-        center: LatLng(51.509364, -0.128928),
-        zoom: 9.2,
-      ),
-      nonRotatedChildren: [
-        AttributionWidget.defaultWidget(
-          source: 'OpenStreetMap contributors',
-          onSourceTapped: null,
-        ),
-      ],
+          center: LatLng(51.509364, -0.128928),
+          zoom: 9.2,
+          interactiveFlags: InteractiveFlag.all),
       children: [
         TileLayer(
           urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-          userAgentPackageName: 'com.example.app',
         ),
       ],
     );
